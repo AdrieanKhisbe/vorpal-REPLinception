@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/AdrieanKhisbe/vorpal-REPLinception/issues"
   },
-  "homepage": "https://github.com/AdrieanKhisbe/vorpal-REPLinception#readme"
+  "homepage": "https://github.com/AdrieanKhisbe/vorpal-REPLinception#readme",
+  "dependencies": {
+    "chalk": "^2.3.0"
+  }
 }
