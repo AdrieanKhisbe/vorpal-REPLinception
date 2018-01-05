@@ -5,5 +5,5 @@ const vorpal = Vorpal();
 
 vorpal
   .delimiter('node~$')
-  .use(vorpalReplinception)
+  .use(vorpalReplinception())
   .show();
