@@ -1,5 +1,5 @@
 {
-  "name": "vorpal-REPLinception",
+  "name": "vorpal-replinception",
   "version": "0.1.0",
   "description": "Vorpal Extension for node Repl",
   "main": "index.js",
