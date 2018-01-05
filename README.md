@@ -38,4 +38,4 @@ here are so far the properties:
 - `enterMessage`: some message at the entering of the node repl
 - `exitMessage`: some message at the exit of the node repl
 
-For more details refer to the [examples folder](./examples)
+For more details refer to the [examples folder](./examples), specificaly the [`my-repl-with-customized-repl.js` file](./examples/my-repl-with-customized-repl.js)
