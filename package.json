@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava test"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,9 @@
   "homepage": "https://github.com/AdrieanKhisbe/vorpal-REPLinception#readme",
   "dependencies": {
     "chalk": "^2.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "ava-spec": "^1.1.1"
   }
 }
