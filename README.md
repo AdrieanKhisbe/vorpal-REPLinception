@@ -33,10 +33,13 @@ vorpal
 
 This is configurable, you can pass a config object to `vorpalReplinception`:
 here are so far the properties:
-- `commandName` : the name of the vorpal command to enter the repl, default to `repl`
 - `prompt` = the prompt used by the repl
+- `commandName` : the name of the vorpal command to enter the repl, default to `repl`
+- `aliasName` : an alias for the commandName, default to `console`, disable with `false`
+- `helpMessageMessage`: the help message associated with the command
 - `enterMessage`: some message at the entering of the node repl
-- `exitMessage`: some message at the exit of the node repl
+- `exitMessage`: some message at the exit of the node repl, disable with `false`
+- `exitMessage`: some message at the exit of the node repl, disable with `false`
 - `context`: this is a key value object for the values you want to expose in the repl context.
 
 For more details refer to the [examples folder](./examples), specificaly the
