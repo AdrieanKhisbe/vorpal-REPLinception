@@ -1,6 +1,6 @@
 {
   "name": "vorpal-replinception",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Vorpal Extension for node Repl",
   "main": "lib/index.js",
   "directories": {
