@@ -2,6 +2,8 @@
 > Vorpal Extension for node Repl
 
 [![npm](https://img.shields.io/npm/v/vorpal-replinception.svg)](https://www.npmjs.com/package/vorpal-replinception)
+[![Build Status](https://travis-ci.org/AdrieanKhisbe/vorpal-REPLinception.svg?branch=master)](https://travis-ci.org/AdrieanKhisbe/vorpal-REPLinception)
+[![codecov](https://codecov.io/gh/AdrieanKhisbe/vorpal-REPLinception/branch/master/graph/badge.svg)](https://codecov.io/gh/AdrieanKhisbe/vorpal-REPLinception)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 *vorpal-REPLinception* is a plugin to vorpal to provide a command to open a node REPL.
