@@ -43,6 +43,7 @@ here are so far the properties:
 - `enterMessage`: some message at the entering of the node repl
 - `exitMessage`: some message at the exit of the node repl, disable with `false`
 - `exitMessage`: some message at the exit of the node repl, disable with `false`
+- `historyFile`: where the repl history is persisted, default with `.vorpal_node_history`, disable with `false`
 - `context`: this is a key value object for the values you want to expose in the repl context.
 
 For more details refer to the [examples folder](./examples), specificaly the
