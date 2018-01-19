@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "ava": "^0.24.0",
-    "ava-spec": "^1.1.1"
+    "ava-spec": "^1.1.1",
+    "vorpal": "^1.12.0"
   }
 }
