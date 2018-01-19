@@ -1,6 +1,11 @@
 import {describe} from 'ava-spec';
 import Vorpal from 'vorpal';
+import strip from 'strip-ansi';
 import replinception from '../lib'
+
+const isValidLog = (t, validMessages) => (msg) => {
+  t.truthy(validMessages.includes(strip(msg)));
+}
 
 describe('replinception with no config', it => {
   it('defines the correct command', t => {
@@ -19,7 +24,9 @@ describe('replinception with no config', it => {
   it.cb('command open up a repl as expected', t => {
     const vorpal = Vorpal();
     vorpal.use(replinception());
-    const action = vorpal.find('repl')._fn.bind({log: console.log})
+
+    const action = vorpal.find('repl')._fn
+      .bind({log: isValidLog(t, ['entering node REPL','\nexiting node REPL'])});
     const replServer = action('stub', t.end);
     replServer.emit('exit')
 
