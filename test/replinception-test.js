@@ -31,4 +31,9 @@ describe('replinception with some config', it => {
     vorpal.use(replinception({aliasName: 'test'}));
     t.truthy(vorpal.find('repl')._aliases, ['test']);
   });
+  it('can disable alias name', t => {
+    const vorpal = Vorpal();
+    vorpal.use(replinception({aliasName: false}));
+    t.truthy(vorpal.find('repl')._aliases, []);
+  });
 });
