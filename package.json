@@ -7,6 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
+    "cover": "nyc npm test",
+    "publish-coverage": "codecov",
     "test": "ava test"
   },
   "repository": {
@@ -26,6 +28,8 @@
   "devDependencies": {
     "ava": "^0.24.0",
     "ava-spec": "^1.1.1",
+    "codecov": "^3.0.0",
+    "nyc": "^11.4.1",
     "vorpal": "^1.12.0"
   }
 }
