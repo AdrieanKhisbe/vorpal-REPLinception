@@ -28,8 +28,7 @@ describe('replinception with no config', it => {
     const action = vorpal.find('repl')._fn
       .bind({log: isValidLog(t, ['entering node REPL','\nexiting node REPL'])});
     const replServer = action('stub', t.end);
-    replServer.emit('exit')
-
+    replServer.emit('exit');
   });
 });
 
@@ -50,5 +49,16 @@ describe('replinception with some config', it => {
     const vorpal = Vorpal();
     vorpal.use(replinception({aliasName: false}));
     t.truthy(vorpal.find('repl')._aliases, []);
+  });
+
+  it.cb('command open a repl with given context (and no messages)', t => {
+    const vorpal = Vorpal();
+    vorpal.use(replinception({enterMessage: false, exitMessage: false, context: {universe: 42}}));
+
+    const action = vorpal.find('repl')._fn
+      .bind({log: isValidLog(t, ['XXX'])});
+    const replServer = action('stub', t.end);
+    replServer.emit('exit');
+    t.deepEqual(42, replServer.context.universe)
   });
 });
