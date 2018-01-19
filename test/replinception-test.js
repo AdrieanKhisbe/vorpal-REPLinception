@@ -6,15 +6,23 @@ describe('replinception with no config', it => {
   it('defines the correct command', t => {
     const vorpal = Vorpal();
     vorpal.use(replinception());
-    const cmd = vorpal.find('repl')
+    const cmd = vorpal.find('repl');
     t.truthy(cmd);
   });
   it('command has correct details', t => {
     const vorpal = Vorpal();
     vorpal.use(replinception());
-    const cmd = vorpal.find('repl')
+    const cmd = vorpal.find('repl');
     t.deepEqual(cmd._description, 'Open a node REPL. (alias console)')
     t.deepEqual(cmd._aliases, ['console']);
+  });
+  it.cb('command open up a repl as expected', t => {
+    const vorpal = Vorpal();
+    vorpal.use(replinception());
+    const action = vorpal.find('repl')._fn.bind({log: console.log})
+    const replServer = action('stub', t.end);
+    replServer.emit('exit')
+
   });
 });
 
