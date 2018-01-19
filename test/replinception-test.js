@@ -20,7 +20,15 @@ describe('replinception with no config', it => {
 
 
 describe('replinception with some config', it => {
-
-
-
+  it('can define command name', t => {
+    const vorpal = Vorpal();
+    vorpal.use(replinception({commandName: 'test'}));
+    t.truthy(vorpal.find('test'));
+    t.falsy(vorpal.find('repl'));
+  });
+  it('can define alias name', t => {
+    const vorpal = Vorpal();
+    vorpal.use(replinception({aliasName: 'test'}));
+    t.truthy(vorpal.find('repl')._aliases, ['test']);
+  });
 });
