@@ -15,7 +15,11 @@
     "type": "git",
     "url": "git+https://github.com/AdrieanKhisbe/vorpal-REPLinception.git"
   },
-  "keywords": [],
+  "keywords": [
+    "vorpal",
+    "cli",
+    "repl"
+  ],
   "author": "Adrien Becchis",
   "license": "ISC",
   "bugs": {
