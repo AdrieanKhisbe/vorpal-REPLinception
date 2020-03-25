@@ -9,9 +9,10 @@
     "LICENSE"
   ],
   "scripts": {
-    "cover": "nyc npm test",
-    "publish-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "test": "ava"
+    "lint": "eslint src test examples",
+    "test": " nyc npm run test:unit",
+    "publish-coverage": "npm run lint && nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "test:unit": "ava"
   },
   "repository": {
     "type": "git",
@@ -33,9 +34,11 @@
     "repl.history": "^0.1.4"
   },
   "devDependencies": {
+    "@-k/eslint-plugin": "^0.3.1",
     "ava": "^2.4.0",
     "ava-spec": "^1.1.1",
     "codecov": "^3.6.5",
+    "eslint": "^6.8.0",
     "nyc": "^15.0.0",
     "strip-ansi": "^6.0.0",
     "vorpal": "^1.12.0"
