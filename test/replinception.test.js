@@ -43,12 +43,12 @@ describe('replinception with some config', it => {
   it('can define alias name', t => {
     const vorpal = Vorpal();
     vorpal.use(replinception({aliasName: 'test'}));
-    t.truthy(vorpal.find('repl')._aliases, ['test']);
+    t.deepEqual(vorpal.find('repl')._aliases, ['test']);
   });
   it('can disable alias name', t => {
     const vorpal = Vorpal();
     vorpal.use(replinception({aliasName: false}));
-    t.truthy(vorpal.find('repl')._aliases, []);
+    t.deepEqual(vorpal.find('repl')._aliases, []);
   });
 
   it.cb('command open a repl with given context (and no messages)', t => {
