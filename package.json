@@ -3,9 +3,11 @@
   "version": "0.5.0",
   "description": "Vorpal Extension for node Repl",
   "main": "lib/index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "cover": "nyc npm test",
     "publish-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",

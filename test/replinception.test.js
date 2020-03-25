@@ -1,7 +1,7 @@
 import {describe} from 'ava-spec';
 import Vorpal from 'vorpal';
 import strip from 'strip-ansi';
-import replinception from '../lib'
+import replinception from '../src'
 
 const isValidLog = (t, validMessages) => (msg) => {
   t.truthy(validMessages.includes(strip(msg)));
