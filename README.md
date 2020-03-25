@@ -22,7 +22,7 @@ npm install vorpal-replinception
 ### Basic Usage
 ```js
 const Vorpal = require('vorpal');
-const vorpalReplinception = require('../lib');
+const vorpalReplinception = require('../src');
 
 const vorpal = Vorpal();
 

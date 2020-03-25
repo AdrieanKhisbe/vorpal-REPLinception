@@ -1,8 +1,8 @@
 const repl = require('repl');
-const replHistory = require('repl.history');
-const c = require('chalk');
 const os = require('os');
 const path = require('path');
+const replHistory = require('repl.history');
+const c = require('chalk');
 
 module.exports = (options = {}) => vorpal => {
   const {
@@ -16,27 +16,23 @@ module.exports = (options = {}) => vorpal => {
     context = {}
   } = options;
 
-
   const historyPath = path.join(os.homedir(), historyFile);
 
-  const cmd = vorpal.command(commandName, helpMessage)
-    .action(function (command, cb){
-      if (enterMessage) this.log(enterMessage);
-      const replServer = repl.start(prompt);
-      if (historyPath) replHistory(replServer, historyPath);
+  const cmd = vorpal.command(commandName, helpMessage).action(function(command, cb) {
+    if (enterMessage) this.log(enterMessage);
+    const replServer = repl.start(prompt);
+    if (historyPath) replHistory(replServer, historyPath);
 
-      for (const key of Object.keys(context)) {
-        replServer.context[key] = context[key];
-      }
+    for (const key of Object.keys(context)) {
+      replServer.context[key] = context[key];
+    }
 
-      replServer.on('exit', () => {
-        if(exitMessage) this.log(exitMessage);
-        cb();
-      });
-      return replServer;
+    replServer.on('exit', () => {
+      if (exitMessage) this.log(exitMessage);
+      cb();
     });
+    return replServer;
+  });
 
-  if(aliasName)
-    cmd.alias(aliasName);
-
+  if (aliasName) cmd.alias(aliasName);
 };

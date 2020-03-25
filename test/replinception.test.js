@@ -1,11 +1,11 @@
 import {describe} from 'ava-spec';
 import Vorpal from 'vorpal';
 import strip from 'strip-ansi';
-import replinception from '../src'
+import replinception from '../src';
 
-const isValidLog = (t, validMessages) => (msg) => {
+const isValidLog = (t, validMessages) => msg => {
   t.truthy(validMessages.includes(strip(msg)));
-}
+};
 
 describe('replinception with no config', it => {
   it('defines the correct command', t => {
@@ -18,20 +18,20 @@ describe('replinception with no config', it => {
     const vorpal = Vorpal();
     vorpal.use(replinception());
     const cmd = vorpal.find('repl');
-    t.deepEqual(cmd._description, 'Open a node REPL. (alias console)')
+    t.deepEqual(cmd._description, 'Open a node REPL. (alias console)');
     t.deepEqual(cmd._aliases, ['console']);
   });
   it.cb('command open up a repl as expected', t => {
     const vorpal = Vorpal();
     vorpal.use(replinception());
 
-    const action = vorpal.find('repl')._fn
-      .bind({log: isValidLog(t, ['entering node REPL','\nexiting node REPL'])});
+    const action = vorpal
+      .find('repl')
+      ._fn.bind({log: isValidLog(t, ['entering node REPL', '\nexiting node REPL'])});
     const replServer = action('stub', t.end);
     replServer.emit('exit');
   });
 });
-
 
 describe('replinception with some config', it => {
   it('can define command name', t => {
@@ -53,12 +53,11 @@ describe('replinception with some config', it => {
 
   it.cb('command open a repl with given context (and no messages)', t => {
     const vorpal = Vorpal();
-    vorpal.use(replinception({enterMessage: false, exitMessage: false, context: {universe: 42}}));
+    vorpal.use(replinception({enterMessage: false, exitMessage: false, context: {universe: 42}}));
 
-    const action = vorpal.find('repl')._fn
-      .bind({log: isValidLog(t, ['XXX'])});
+    const action = vorpal.find('repl')._fn.bind({log: isValidLog(t, ['XXX'])});
     const replServer = action('stub', t.end);
     replServer.emit('exit');
-    t.deepEqual(42, replServer.context.universe)
+    t.deepEqual(42, replServer.context.universe);
   });
 });
