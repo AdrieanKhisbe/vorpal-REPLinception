@@ -1,7 +1,7 @@
 const repl = require('repl');
 const os = require('os');
 const path = require('path');
-const replHistory = require('repl.history');
+const replHistory = require('repl-story');
 const c = require('chalk');
 
 module.exports = (options = {}) => vorpal => {

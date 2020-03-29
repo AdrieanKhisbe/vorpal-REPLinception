@@ -31,7 +31,7 @@
   "homepage": "https://github.com/AdrieanKhisbe/vorpal-REPLinception#readme",
   "dependencies": {
     "chalk": "^3.0.0",
-    "repl.history": "^0.1.4"
+    "repl-story": "^0.2.2"
   },
   "devDependencies": {
     "@-k/eslint-plugin": "^0.3.1",
