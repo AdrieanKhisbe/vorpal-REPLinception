@@ -23,8 +23,8 @@
     "cli",
     "repl"
   ],
-  "author": "Adrien Becchis",
-  "license": "ISC",
+  "author": "Adrien Becchis <adriean.khisbe@live.fr> (https://github.com/AdrieanKhisbe/)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/AdrieanKhisbe/vorpal-REPLinception/issues"
   },
