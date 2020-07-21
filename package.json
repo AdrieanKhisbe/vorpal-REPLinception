@@ -2,11 +2,9 @@
   "name": "vorpal-replinception",
   "version": "0.5.1",
   "description": "Vorpal Extension for node Repl",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "files": [
-    "src",
-    "README.md",
-    "LICENSE"
+    "src"
   ],
   "scripts": {
     "lint": "eslint src test examples",
